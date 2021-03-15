@@ -1,6 +1,8 @@
-# Pull base image 
-From tomcat:8-jre8 
 
-# Maintainer 
+From tomcat:8-jre8
+
+MAINTAINER "alik"
 
 COPY ./webapp.war /usr/local/tomcat/webapps
+
+
