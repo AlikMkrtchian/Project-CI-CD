@@ -28,5 +28,5 @@
  # Prod-result
    ![Images](https://github.com/AlikMkrtchian/Project-CI-CD/blob/master/DeepinScreenshot_Navigator_20210318120218.png)
     ![Images](https://github.com/AlikMkrtchian/Project-CI-CD/blob/master/DeepinScreenshot_Navigator_20210318120227.png)
-     ![Images](https://github.com/AlikMkrtchian/Project-CI-CD/blob/master/DeepinScreenshot_select-area_20210318124201.pngg)
+     ![Images](https://github.com/AlikMkrtchian/Project-CI-CD/blob/master/DeepinScreenshot_select-area_20210318124201.png)
      
