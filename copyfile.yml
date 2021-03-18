@@ -1,38 +1,40 @@
 ---
-- name: copyweb
+- name: Copyweb
   hosts: 172.31.19.144
   become: yes
 
   vars:
     source_file: /opt/playbooks/webapp/target/webapp.war
     destin_file: /opt/tomcat/webapps
-
+    source_file1: /opt/local/webapp/target/webapp.war  #for new servers 
+    destin_file1: /usr/local/tomcat/webapps            #for new servers 
 
   tasks:
   - name: install java
     yum: name=java  state=latest
+    ignore_errors: yes
 
 
-
-  - name: download tomcat
+  - name: Download Tomcat
     get_url:
           url: https://apache.paket.ua/tomcat/tomcat-10/v10.0.4/bin/apache-tomcat-10.0.4.tar.gz
-          dest: /usr/local
-
-
-  - name: extract
+          dest: /usr/local  
+    ignore_errors: yes
+ 
+  - name: Extract
     unarchive:
            src: /usr/local/apache-tomcat-10.0.4.tar.gz
            dest: /usr/local
            remote_src: yes
-
-   # - name: start tomcat
+    ignore_errors: yes
+   #- name: start tomcat
    # shell: nohup /usr/local/apache-tomcat-10.0.4/bin/startup.sh
+     ignore_errors: yes
 
   - name: Tomcatservers
     copy:
           src: "{{ source_file }}"
           dest: "{{ destin_file }}"
           backup: yes
-
+    
 
