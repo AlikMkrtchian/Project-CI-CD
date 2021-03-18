@@ -1,0 +1,37 @@
+---
+-  name: Simple
+   hosts: 172.31.1.130
+   become: true
+
+   tasks:
+
+
+     - name: Update system
+       yum: update_cache=yes
+
+     - name: Add user
+       user:
+         name: ansadmin
+         groups: docker
+         append: yes
+       become: yes
+
+     - name: starting docker services
+       service:
+               name: docker
+               state: started
+
+
+     - name: stop previous version docker
+       shell: docker stop alik_test
+       ignore_errors: yes
+     - name: remove stopped container
+       shell: docker rm -f alik_test
+       ignore_errors: yes
+     - name: remove docker images
+       shell: docker image rm -f snnapys/alik_test
+       ignore_errors: yes
+     - name: create docker image
+       shell: docker run -d --restart=always --name alik_test -p 8090:8080 snnapys/alik_test
+
+Не получается установить докер ...

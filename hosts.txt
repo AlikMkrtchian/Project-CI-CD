@@ -1,0 +1,16 @@
+[web_server_test]
+172.31.19.144
+
+
+[docker_web_server]
+172.31.1.130
+
+
+[TEST_PROD:children]
+docker_web_server
+web_server_test
+
+
+[TEST_PROD:vars]
+ansible_user=ansadmin
+
