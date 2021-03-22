@@ -7,10 +7,17 @@
 
 
      - name: Update system
-       yum: update_cache=yes
-
+       yum: update_cache=yes- hosts: servers
+  
+  
+ 
+     - role: avinetworks.docker
+       docker_storage_driver: devicemapper
+       docker_block_device: /dev/sda3
+       
+      
+    
      - name: Add user
-       user:
          name: ansadmin
          groups: docker
          append: yes
