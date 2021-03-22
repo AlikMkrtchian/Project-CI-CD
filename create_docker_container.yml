@@ -40,5 +40,3 @@
        ignore_errors: yes
      - name: create docker image
        shell: docker run -d --restart=always --name alik_test -p 8090:8080 snnapys/alik_test
-
-Не получается установить докер ...
