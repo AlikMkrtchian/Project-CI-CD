@@ -7,7 +7,7 @@
 
 
      - name: Update system
-       yum: update_cache=yes- hosts: servers
+       yum: update_cache=yes
   
   
  
