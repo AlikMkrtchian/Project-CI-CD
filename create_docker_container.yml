@@ -8,15 +8,19 @@
 
      - name: Update system
        yum: update_cache=yes
+       
+     - name: Check if gtk is installed
+       command: yum list installed       
+       register: docker_check
+       ignore_errors: yes
   
-  
- 
      - role: avinetworks.docker
        docker_storage_driver: devicemapper
        docker_block_device: /dev/sda3
+       when: docker_check.stdout.find('docker.x86_64') != -1
+       ignore_errors: yes
+
        
-      
-    
      - name: Add user
          name: ansadmin
          groups: docker
