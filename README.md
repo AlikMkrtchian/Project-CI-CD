@@ -16,6 +16,8 @@
  
  # create_docker_container = Prod   
  
+ ![Images](https://github.com/AlikMkrtchian/Project-CI-CD/blob/master/DeepinScreenshot_select-area_20210323182756.png)
+ 
  ![Images](https://github.com/AlikMkrtchian/Project-CI-CD/blob/master/DeepinScreenshot_Navigator_20210318115825.png)
  
  
